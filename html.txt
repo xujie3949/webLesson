@@ -1,0 +1,80 @@
+html简介
+
+html是什么？
+超文本标记语言Hyper Text Markup Language
+由一系列的html标签和纯文本组成
+
+html标签
+开始标签和结束标签成对出现的，比如
+<div>这是一个html标签</div>
+html标签不会显示，会被浏览器解释并渲染
+
+html元素
+html开始标签和结束标签加上中间的内容
+空元素<div/>
+拥有属性和事件
+可嵌套
+
+html属性
+总是在开始标签中出现
+name="value"
+属性名和值大小写不敏感,推荐小写
+
+注释
+<!-- 注释内容 -->
+
+使用样式
+外部样式表
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+内部样式表
+<head>
+<style type="text/css">
+body {background-color: red}
+</style>
+</head>
+内联样式
+<p style="color: red; margin-left: 20px">
+This is a paragraph
+</p>
+
+常用标签
+文档类型<!doctype>
+文档<html>
+标题<title>
+链接<link>
+脚本<src>
+样式<style>
+文档主体<body>
+文档元信息<meta>
+文档头<head>
+链接<a>
+图像<img>
+表格<tabel>
+列表<ul><li>
+块<div>
+表单<form>
+输入控件<input>
+下拉框<select>
+
+XHTML是什么
+可扩展超文本标记语言
+与html4.01基本相同，但是更严格
+强制要求<doctype>,<html>,<title>,<body>
+元素
+始终关闭
+始终小写
+只能有一个跟元素
+属性
+小写
+引号包围
+
+html5
+最新版本html标准
+新的语义/结构元素
+新的输入类型和属性
+新的属性语法
+图像支持
+媒体元素
+
