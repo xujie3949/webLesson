@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="container">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet"/>
+    <title>注册</title>
+</head>
+<body class="container">
+<div class="bg container flex-col justify-content-center align-items-center">
+    <div class="formContainer flex-col">
+        <div class="formTitle flex-row justify-content-center align-items-center"
+             style="height: 40px">
+            用户注册
+        </div>
+        <div class="flex-col justify-content-space-around align-items-center"
+             style="height: 200px">
+            <div class="flex-col justify-content-space-between">
+                <label class="fontSmall" for="username">用户名</label>
+                <input class="inputText" id="username" type="text"/>
+            </div>
+            <div class="flex-col justify-content-space-between">
+                <label class="fontSmall" for="password">密码</label>
+                <input class="inputText" id="password" type="password"/>
+            </div>
+            <div class="flex-row justify-content-space-between"
+                 style="width: 300px">
+                <div class="flex-row justify-content-space-between" style="width: 150px">
+                    <input id="vcExpression"
+                           class="verificationCode"
+                           type="text"
+                           disabled="true"
+                    >
+                    </input>
+                    <div class="flex-col justify-content-center">
+                        <div class="fontBig">=</div>
+                    </div>
+                    <input class="inputText" style="width: 40px" id="vcValue" type="text"/>
+                </div>
+                <div class="flex-col justify-content-center">
+                    <input class="inputLinkButton" id="refresh" type="button" value="刷新"
+                    onclick="registerVM.refresh()"/>
+                </div>
+            </div>
+            <div class="flex-col justify-content-space-between">
+                <input class="inputButton" id="register" type="button" value="注册"
+                onclick="registerVM.register()"/>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/userService.js"></script>
+<script src="js/register.js"></script>
+<script>
+    window.onload = function () {
+        registerVM.onload();
+    };
+</script>
+</body>
+</html>

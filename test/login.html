@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="container">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet"/>
+    <title>登录</title>
+</head>
+<body class="container">
+<div class="bg container flex-col justify-content-center align-items-center">
+    <div class="formContainer flex-col">
+        <div class="formTitle flex-row justify-content-center align-items-center"
+             style="height: 40px">
+            用户登录
+        </div>
+        <div class="flex-col justify-content-space-around align-items-center"
+             style="height: 200px">
+            <div class="flex-col justify-content-space-between">
+                <label class="fontSmall" for="username">用户名</label>
+                <input class="inputText" id="username" type="text"/>
+            </div>
+            <div class="flex-col justify-content-space-between">
+                <label class="fontSmall" for="password">密码</label>
+                <input class="inputText" id="password" type="password"/>
+            </div>
+            <div class="flex-row justify-content-space-between"
+                 style="width: 300px">
+                <div class="flex-row">
+                    <input id="showPassword" type="checkbox"
+                           onclick="loginVM.showPassword()">
+                    <label class="fontSmall" for="showPassword">显示密码</label>
+                </div>
+                <div class="flex-row">
+                    <input id="rememberUsername" type="checkbox" checked="true">
+                    <label class="fontSmall" for="rememberUsername">记住账号</label>
+                </div>
+                <div class="flex-row">
+                    <input id="keepLogin" type="checkbox">
+                    <label class="fontSmall" for="keepLogin">一周内免登陆</label>
+                </div>
+            </div>
+            <div class="flex-col justify-content-space-between">
+                <input class="inputButton" id="login" type="button" value="登录"
+                       onclick="loginVM.login()"/>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/userService.js"></script>
+<script src="js/login.js"></script>
+<script>
+    window.onload = function () {
+        loginVM.onload();
+    };
+</script>
+</body>
+</html>
