@@ -13,15 +13,10 @@ window.loginVM = {
         if (lastLoginSucceedTime) {
             var now = new Date().getTime();
             var millisecondOfWeek = 7 * 24 * 60 * 60 * 1000;
-            if (now - lastLoginSucceedTime > millisecondOfWeek) {
-                alert('距离上次登录成功超过了一周,请重新登录!');
-                return;
+            if (now - lastLoginSucceedTime < millisecondOfWeek) {
+                window.location = 'main.html';
             }
-        } else {
-            return;
         }
-
-        window.location = 'main.html';
     },
 
     showPassword: function () {
@@ -35,13 +30,15 @@ window.loginVM = {
     },
 
     login: function () {
+        localStorage.removeItem('user');
+        localStorage.removeItem('lastLoginSucceedTime');
+        localStorage.removeItem('lastUsername');
+
         var username = document.getElementById('username').value.trim();
         var password = document.getElementById('password').value.trim();
 
         var res = userService.login(username, password);
         if (!res.success) {
-            localStorage.removeItem('user');
-            localStorage.removeItem('lastUsername');
             alert(res.msg);
             return;
         }
