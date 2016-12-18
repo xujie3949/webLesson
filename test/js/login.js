@@ -8,15 +8,6 @@ window.loginVM = {
         if (lastUsername) {
             document.getElementById('username').value = lastUsername;
         }
-
-        var lastLoginSucceedTime = localStorage.getItem('lastLoginSucceedTime');
-        if (lastLoginSucceedTime) {
-            var now = new Date().getTime();
-            var millisecondOfWeek = 7 * 24 * 60 * 60 * 1000;
-            if (now - lastLoginSucceedTime < millisecondOfWeek) {
-                window.location = 'main.html';
-            }
-        }
     },
 
     showPassword: function () {

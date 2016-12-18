@@ -1,11 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="container">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="icon" href="images/logo.png" type="image/png"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <title>主页面</title>
 </head>
-<body>
-<script src="js/login.js"></script>
+<body class="bg container">
+<div class="flex-col">
+    <div class="header flex-row">
+        <div class="flex-row align-items-center" style="flex: 0 0 350px">
+            <img src="images/logo.png">
+            <div style="color: white; font-size: 30px">人员管理系统</div>
+        </div>
+        <div class="flex-col justify-content-flex-end align-items-flex-end"
+             style="flex: auto">
+            <div class="flex-row" style="width: 74px;height: 20px">
+                <input class="inputLinkButton" id="about" type="button" value="关于"
+                       style="font-size: 10px; color: white; background-color: transparent"/>
+                <div style="border-left: white solid 2px"></div>
+                <input id="exit" class="inputLinkButton" id="exit" type="button" value="退出"
+                       onclick="mainVM.exit()"
+                       style="font-size: 10px; color: white; background-color: transparent"/>
+            </div>
+            <div class="flex-row justify-content-flex-end align-items-center"
+                 style="height: 32px">
+                <img src="images/user.png">
+                <div id="user" style="flex: 0 0 57px;color: white; font-size: 20px">admin</div>
+            </div>
+        </div>
+    </div>
+    <div class="content flex-row">
+        <div class="left flex-col">
+            <div onclick="mainVM.showOrHiddenDepartmentList()">部门列表</div>
+            <div id="departmentList" class="flex-col" style="visibility: collapse; margin-left: 20px">
+                <div onclick="mainVM.onDepartmentClick(this)">研发部</div>
+                <div onclick="mainVM.onDepartmentClick(this)">数据制作</div>
+                <div onclick="mainVM.onDepartmentClick(this)">品质保证</div>
+                <div onclick="mainVM.onDepartmentClick(this)">企划部</div>
+            </div>
+        </div>
+
+        <div class="right flex-col">
+            <div class="title flex-col justify-content-center"
+                 style="background-color: #9c9c9c">
+                <div id="currentLocation" style="color: white;">当前位置:部门列表 -> 研发部</div>
+            </div>
+            <div class="main flex-col">
+                <div class="flex-row"
+                     style="height: 25px;">
+                    <div class="imageButton flex-row justify-content-center align-items-center"
+                         onclick="mainVM.add()">
+                        <img src="images/add.png" style="width:20px;height: 20px">
+                        <div>新增</div>
+                    </div>
+                    <div class="imageButton flex-row justify-content-center align-items-center"
+                         onclick="mainVM.del()">
+                        <img src="images/remove.png" style="width:20px;height: 20px">
+                        <div>删除</div>
+                    </div>
+                </div>
+                <div class="flex-col" style="flex: auto">
+                    <div style="height: 60%; width: 100%">
+                        <table id="table">
+                            <tr>
+                                <th>
+                                    <input id="checkAll" type="checkbox" onclick="mainVM.checkAll(this.checked)">
+                                </th>
+                                <th>员工编号</th>
+                                <th>姓名</th>
+                                <th>部门</th>
+                                <th>职位</th>
+                                <th>入职时间</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="flex-col justify-content-space-between" style="flex: 0 0 120px;">
+                        <div class="flex-row justify-content-space-between"
+                             style="width: 400px; height: 20px">
+                            <label for="number">员工编号</label>
+                            <input id="number" type="text" style="width: 300px">
+                        </div>
+                        <div class="flex-row justify-content-space-between"
+                             style="width: 400px; height: 20px">
+                            <label for="name">姓名</label>
+                            <input id="name" type="text" style="width: 300px">
+                        </div>
+                        <div class="flex-row justify-content-space-between"
+                             style="width: 400px; height: 20px">
+                            <label for="department">部门</label>
+                            <select id="department" style="width: 300px">
+                                <option>研发部</option>
+                                <option>数据制作</option>
+                                <option>品质保证</option>
+                                <option>企划部</option>
+                            </select>
+                        </div>
+                        <div class="flex-row justify-content-space-between"
+                             style="width: 400px; height: 20px">
+                            <label for="position">职位</label>
+                            <input id="position" type="text" style="width: 300px">
+                        </div>
+                        <div class="flex-row justify-content-space-between"
+                             style="width: 400px; height: 20px">
+                            <label for="joinTime">入职时间</label>
+                            <input id="joinTime" type="text" style="width: 300px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/users.js"></script>
+<script src="js/staffService.js"></script>
 <script src="js/main.js"></script>
 <script>
     window.onload = function () {

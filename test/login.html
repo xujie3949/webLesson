@@ -7,39 +7,42 @@
 </head>
 <body class="container">
 <div class="bg container flex-col justify-content-center align-items-center">
-    <div class="formContainer flex-col">
+    <div class="formContainer flex-col" style="height: 240px">
         <div class="formTitle flex-row justify-content-center align-items-center"
              style="height: 40px">
             用户登录
         </div>
         <div class="flex-col justify-content-space-around align-items-center"
              style="height: 200px">
-            <div class="flex-col justify-content-space-between">
+            <div class="flex-col justify-content-space-between"
+                 style="width: 300px">
                 <label class="fontSmall" for="username">用户名</label>
                 <input class="inputText" id="username" type="text"/>
             </div>
-            <div class="flex-col justify-content-space-between">
+            <div class="flex-col justify-content-space-between"
+                 style="width: 300px">
                 <label class="fontSmall" for="password">密码</label>
                 <input class="inputText" id="password" type="password"/>
             </div>
-            <div class="flex-row justify-content-space-between"
+            <div class="flex-row justify-content-space-between align-items-center"
                  style="width: 300px">
-                <div class="flex-row">
+                <div class="flex-row" style="height: 20px">
                     <input id="showPassword" type="checkbox"
                            onclick="loginVM.showPassword()">
                     <label class="fontSmall" for="showPassword">显示密码</label>
                 </div>
-                <div class="flex-row">
+                <div class="flex-row" style="height: 20px">
                     <input id="rememberUsername" type="checkbox" checked="true">
                     <label class="fontSmall" for="rememberUsername">记住账号</label>
                 </div>
-                <div class="flex-row">
+                <div class="flex-row" style="height: 20px">
                     <input id="keepLogin" type="checkbox">
                     <label class="fontSmall" for="keepLogin">一周内免登陆</label>
                 </div>
             </div>
-            <div class="flex-col justify-content-space-between">
+            <div class="flex-col justify-content-center align-items-center">
                 <input class="inputButton" id="login" type="button" value="登录"
+                       style="height: 30px"
                        onclick="loginVM.login()"/>
             </div>
         </div>

@@ -12,15 +12,19 @@
 .flex-row {
     padding: 0;
     margin: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-flow: row;
 }
 
 .flex-col {
     padding: 0;
     margin: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
 }
 
 .justify-content-flex-start {
@@ -139,7 +143,7 @@
     text-align: center;
 }
 
-.inputLinkButton{
+.inputLinkButton {
     font-family: 微软雅黑;
     font-size: 20px;
     color: #0000cc;
@@ -148,4 +152,60 @@
 
 .inputLinkButton:hover {
     color: #993300;
+}
+
+.header {
+    flex: 0 0 128px;
+    background-color: blue;
+}
+
+.content {
+    flex: auto;
+    /*background-color: blue;*/
+}
+
+.left {
+    flex: 0 0 150px;
+    border-right: 1px solid black;
+    background-color: #71c4e4;
+}
+
+.right {
+    flex: auto;
+    /*background-color: red;*/
+}
+
+.title {
+    flex: 0 0 30px;
+    /*background-color: yellow;*/
+}
+
+.main {
+    flex: auto;
+}
+
+.selectedDepartment {
+    color: #4285f4;
+}
+
+.imageButton {
+    border: 1px solid black;
+    width: 60px;
+    background-color: #e9e9e9
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    width: 100%;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    background-color: #993300;
 }

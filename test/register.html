@@ -7,24 +7,25 @@
 </head>
 <body class="container">
 <div class="bg container flex-col justify-content-center align-items-center">
-    <div class="formContainer flex-col">
+    <div class="formContainer flex-col" style="height: 240px">
         <div class="formTitle flex-row justify-content-center align-items-center"
              style="height: 40px">
             用户注册
         </div>
         <div class="flex-col justify-content-space-around align-items-center"
              style="height: 200px">
-            <div class="flex-col justify-content-space-between">
+            <div class="flex-col justify-content-space-between" style="width: 300px">
                 <label class="fontSmall" for="username">用户名</label>
                 <input class="inputText" id="username" type="text"/>
             </div>
-            <div class="flex-col justify-content-space-between">
+            <div class="flex-col justify-content-space-between"  style="width: 300px">
                 <label class="fontSmall" for="password">密码</label>
                 <input class="inputText" id="password" type="password"/>
             </div>
             <div class="flex-row justify-content-space-between"
                  style="width: 300px">
-                <div class="flex-row justify-content-space-between" style="width: 150px">
+                <div class="flex-row justify-content-space-between align-items-center"
+                     style="width: 150px">
                     <input id="vcExpression"
                            class="verificationCode"
                            type="text"
@@ -36,12 +37,12 @@
                     </div>
                     <input class="inputText" style="width: 40px" id="vcValue" type="text"/>
                 </div>
-                <div class="flex-col justify-content-center">
+                <div class="flex-col justify-content-center" style="width: 60px">
                     <input class="inputLinkButton" id="refresh" type="button" value="刷新"
                     onclick="registerVM.refresh()"/>
                 </div>
             </div>
-            <div class="flex-col justify-content-space-between">
+            <div class="flex-col justify-content-center align-items-center">
                 <input class="inputButton" id="register" type="button" value="注册"
                 onclick="registerVM.register()"/>
             </div>
