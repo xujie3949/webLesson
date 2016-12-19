@@ -29,12 +29,21 @@ window.mainVM = {
             this.refreshCurrentLocation();
             this.refreshCheck();
             this.refreshUser();
-            this.onCheckboxClick = this.onCheckboxClick.bind(this);
         } else {
             var user = localStorage.getItem('user');
             if (!user) {
                 window.location = 'login.html';
+                return;
             }
+
+            this.selectedDepartment = '研发部';
+            this.staffs = staffService.getStaffByDepartment(this.selectedDepartment).data;
+            this.showDepartmentList = true;
+            this.refreshDepartmentList();
+            this.refreshTable();
+            this.refreshCurrentLocation();
+            this.refreshCheck();
+            this.refreshUser();
         }
     },
 
